@@ -13,7 +13,8 @@ namespace portal.Pages
         public string Message { get; set; }
         public void OnGet()
         {
-            AuthFromZabbix Auth = new AuthFromZabbix("Admin1", "zabbix");
+            AuthFromZabbix Auth = new AuthFromZabbix("Admin", "zabbix");
+
             if (Auth.AuthString != null)
             {
                 Message = Auth.AuthString;
