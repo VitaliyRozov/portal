@@ -11,7 +11,26 @@ namespace portal.Pages
     {
         public void OnGet()
         {
-
+            ViewData["MyNumber"] = 42;
+            ViewData["MyString"] = "Hello World";
+            ViewData["MyComplexObject"] = new Book
+            {
+                Title = "Sum Of All Fears",
+                Author = new Author { Name = "Tom Clancy" },
+                Price = 5.99m
+            };
         }
+    }
+
+    internal class Author
+    {
+        public string Name { get; set; }
+    }
+
+    internal class Book
+    {
+        public string Title { get; set; }
+        public Author Author { get; set; }
+        public decimal Price { get; set; }
     }
 }
